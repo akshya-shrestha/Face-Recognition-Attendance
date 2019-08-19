@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block title %}Attendance Records{% endblock %}
+{% block content %}
+<div style="padding-left: 25px;">
+    <h1 class="w3-text-teal" style="padding-top: 20px;">{{ profile.user.first_name }} {{ profile.user.last_name}}</h1>
+          <div style="border: 2px solid black; border-radius: 5px; height: 450px; width: 600px; padding-left: 25px; padding-top: 20px; padding-right: 20px;">
+            <div class="content-section">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <p>Are you sure you want to delete <span style="font-weight: bold; font-size: 18px;">{{ form.username }} </span> ?</p>
+                    <input type="submit" class="btn btn-outline-info">
+            </div>
+          </div>
+    </div>
+{% endblock %}

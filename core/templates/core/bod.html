@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block title %}BOD{% endblock %}
+{% block content %}
+<div style="padding-left: 25px;">
+    <h1 class="w3-text-teal" style="padding-top: 20px;">Board of Directors</h1>
+    <div class="row" style="border: 2px solid black; border-radius: 5px; height: 700px; width: 1400px;">
+        <div class="col-sm-4">
+            <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); width: 390px; margin: auto; text-align: center; font-family: arial;">
+              <img src="{% static 'core/images/Arun.jpg' %}" alt="John" style="width:100%">
+              <h1>Arun Bhandari</h1>
+              <p style="color: grey; font-size: 18px;">CEO / Co-Founder, NAXA</p>
+              <p><i class="fa fa-phone fa-fw"></i>9864735647</p>
+              <p><i class="fa fa-home fa-fw"></i>Kathmandu, Nepal</p>
+              <p><i class="fa fa-birthday-cake fa-fw"></i>1993-03-01</p>
+              <p><i class="fa fa-calendar-plus-o fa-fw"></i>2012-08-06</p>
+              <div style="border: none; outline: 0; display: inline-block; padding: 8px; color: white; background-color: #000; text-align: center; width: 95%; font-size: 18px;">Naxa Pvt. Ltd.</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); width: 390px; margin: auto; text-align: center; font-family: arial;">
+              <img src="{% static 'core/images/Uttam.jpg' %}" alt="John" style="width:100%">
+              <h1>Uttam Pudasaini</h1>
+              <p style="color: grey; font-size: 18px;">Managing Director / Co-Founder, NAXA</p>
+              <p><i class="fa fa-phone fa-fw"></i>9887620938</p>
+              <p><i class="fa fa-home fa-fw"></i>Kathmandu, Nepal</p>
+              <p><i class="fa fa-birthday-cake fa-fw"></i>1989-12-27</p>
+              <p><i class="fa fa-calendar-plus-o fa-fw"></i>2012-08-06</p>
+              <div style="border: none; outline: 0; display: inline-block; padding: 8px; color: white; background-color: #000; text-align: center; width: 95%; font-size: 18px;">Naxa Pvt. Ltd.</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); width: 390px; margin: auto; text-align: center; font-family: arial;">
+              <img src="{% static 'core/images/Upendra.jpg' %}" alt="John" style="width:100%">
+              <h1>Upendra Oli</h1>
+              <p style="color: grey; font-size: 18px;">CTO / Co-Founder, NAXA</p>
+              <p><i class="fa fa-phone fa-fw"></i>9876846590</p>
+              <p><i class="fa fa-home fa-fw"></i>Kathmandu, Nepal</p>
+              <p><i class="fa fa-birthday-cake fa-fw"></i>1992-09-11</p>
+              <p><i class="fa fa-calendar-plus-o fa-fw"></i>2012-08-06</p>
+              <div style="border: none; outline: 0; display: inline-block; padding: 8px; color: white; background-color: #000; text-align: center; width: 95%; font-size: 18px;">Naxa Pvt. Ltd.</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

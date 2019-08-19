@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block title %}Attendance Records{% endblock %}
+{% block content %}
+<div style="padding-left: 25px;">
+      <h1 class="w3-text-teal" style="padding-top: 20px;">Employee Records</h1>
+      <div style="border: 2px solid black; border-radius: 5px; height: 700px; width: 1400px; padding-left: 25px; padding-top: 20px; padding-right: 20px;">
+        <div class="content-section">
+            <table>
+                <th>S.N.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th colspan="2">Action</th>
+                {% for user in employee %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{user.first_name}} {{user.last_name}}</td>
+                        <td>{{user.email}}</td>
+                        <td><a href="{% url 'core:user_profile' user.profile.pk %}" class="btn btn-outline-success">Details</a></td>
+                        <td><a href="{% url 'core:update_user' user.profile.pk %}" class="btn btn-outline-warning">Update</a></td>
+                        <td><a href="{% url 'core:delete_user' user.pk %}" class="btn btn-outline-danger">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+      </div>
+</div>
+{% endblock %}

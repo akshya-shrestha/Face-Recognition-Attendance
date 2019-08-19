@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block title %}Attendance Records{% endblock %}
+{% block content %}
+<div style="padding-left: 25px;">
+      <h1 class="w3-text-teal" style="padding-top: 20px;">Attendance Records</h1>
+      <div style="border: 2px solid black; border-radius: 5px; height: 690px; width: 1200px; padding-left: 25px; padding-top: 20px; padding-right: 20px;">
+        <div class="content-section">
+            <div style="float:left;">
+                <h3>Attendance</h3>
+                <table>
+                    <th>S.N.</th>
+                    <th>Name</th>
+                    <th>Time</th>
+                    {% for user in attendance %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{user.employee.first_name}} {{user.employee.last_name}}</td>
+                            {% if user.time %}
+                                <td>{{user.time}}</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div style="float:right;">
+                    <h3><b>Pick a date to see attendance summary</b></h3>
+                    <p><b>Date:</b> <input type="text" id="datepicker"></p>
+            </div>
+        </div>
+      </div>
+</div>
+{% endblock %}
+{% block extrascript %}
+<script>
+
+$(function() {
+    $("#datepicker").datepicker();
+    $("#datepicker").on("change",function(){
+        var selected = $(this).val();
+        //alert(selected);
+        window.location.href = "http://127.0.0.1:8000/attendance-record?q="+selected;
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% load crispy_forms_tags %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'core/images/logo.jpg' %}"/>
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+
+<body style="background-image:url('../../static/core/images/backkground.png'); height:100%;">
+
+<div class="container-fluid" >
+    <b style="font-size: 50px; color: #bdbfc1; padding-left: 500px; margin-top: 300px;">Welcome to NAXA Pvt. Ltd.</b>
+        <div class="content-section" style="border: 2px solid black; border-radius: 5px; padding: 20px; width: 500px; background-color: #d6d8db; margin: 100px auto;  opacity: 0.83; filter: alpha(opacity=60);">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Enter Account Details</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Login</button>
+            </div>
+            </form>
+        </div>
+
+</div>
+</body>
+</html>

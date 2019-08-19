@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Register New Member{% endblock %}
+{% block content %}
+<div class="w3-twothird w3-container">
+    <h1 class="w3-text-teal" style="padding-top: 20px;">Register New Member</h1>
+        <div class="content-section" style="border: 2px solid black; border-radius: 5px; padding: 20px;">
+            <form enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+            {{ user_form|crispy }}
+            {{ profile_form|crispy }}
+            <button type="submit" class="btn btn-outline-info">Save changes</button>
+</form>
+        </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block title %}Manage Attendance{% endblock %}
+{% block content %}
+<div style="padding-left: 25px;">
+  <h1 class="w3-text-teal" style="padding-top: 20px;">Attendance Management</h1>
+      <div style="border: 2px solid black; border-radius: 5px; height: 170px; padding-left: 25px; padding-top: 20px; padding-right: 20px; width: 800px;">
+        <div class="content-section">
+          <h3>Start attendance by clicking button below!</h3>
+          <p><b>*Note: </b>After attendance is done press 'Esc' key to stop attendance</p>
+          <form action="" method="POST">
+            {% csrf_token %}
+            <div>
+              <a href="/start-attendance">
+                <button type="button" class="btn btn-outline-info">Start Attendance</button>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+</div>
+
+{% endblock %}
+

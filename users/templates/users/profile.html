@@ -1,0 +1,36 @@
+{% extends "users/base.html" %}
+
+{% load static %}
+{% block title %}Attendance Records{% endblock %}
+{% block content %}
+<div style="padding-left: 25px;">
+    <h1 class="w3-text-teal" style="padding-top: 20px;">{{ profile.user.first_name }} {{ profile.user.last_name}}</h1>
+          <!--<div style="border: 2px solid black; border-radius: 5px; height: 900px; padding-left: 25px; padding-top: 20px; padding-right: 20px;">-->
+            <div class="content-section">
+                <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                  max-width: 450px;
+                  margin: auto;
+                  text-align: center;
+                  font-family: arial;">
+                  <img src="{{ profile.image.url }}" alt="John" style="width:100%">
+                  <h1>{{ profile.user.first_name }} {{ profile.user.last_name}}</h1>
+                  <p style="color: grey;
+                  font-size: 18px;">{{ profile.position }}, NAXA</p>
+                  <p><i class="fa fa-phone fa-fw"></i>{{ profile.phone }}</p>
+                  <p><i class="fa fa-home fa-fw"></i>{{ profile.address }}</p>
+                    <p><i class="fa fa-birthday-cake fa-fw"></i>{{ profile.birth_date }}</p>
+                    <p><i class="fa fa-calendar-plus-o fa-fw"></i>{{ profile.joined_date }}</p>
+                  <div style="border: none;
+                  outline: 0;
+                  display: inline-block;
+                  padding: 8px;
+                  color: white;
+                  background-color: #000;
+                  text-align: center;
+                  width: 95%;
+                  font-size: 18px;">Naxa Pvt. Ltd.</>
+                </div>
+            </div>
+          <!--</div>-->
+    </div>
+{% endblock %}

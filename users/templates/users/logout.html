@@ -1,0 +1,20 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logged Out</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'core/images/logo.jpg' %}"/>
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body style="background-image:url('../../static/core/images/backkground.png'); height:100%;">
+<div class="content-section" style="border: 2px solid black; border-radius: 5px; padding: 20px; width: 500px; background-color: #d6d8db; margin: 100px auto;  opacity: 0.7; filter: alpha(opacity=60);">
+<h2>You have been logged out!</h2>
+    <button class="btn btn-outline-info"">
+        <a href="{% url 'login' %}" style="text-decoration:none">Login Again</a>
+    </button>
+    </div>
+</body>
+</html>

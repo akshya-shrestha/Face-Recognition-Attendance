@@ -1,0 +1,71 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block title %}Attendance Records{% endblock %}
+{% block content %}
+<div style="padding-left: 25px;">
+    <h1 class="w3-text-teal" style="padding-top: 20px;">{{ profile.user.first_name }} {{ profile.user.last_name}}</h1>
+    <div class="row" style="border: 2px solid black; border-radius: 5px; height: 700px; width: 1400px;">
+        <div class="col-sm-5">
+            <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                      width: 390px;
+                      margin: auto;
+                      text-align: center;
+                      font-family: arial;">
+                      <img src="{{ profile.image.url }}" alt="John" style="width:100%">
+                      <h1>{{ profile.user.first_name }} {{ profile.user.last_name}}</h1>
+                      <p style="color: grey;
+                      font-size: 18px;">{{ profile.position }}, NAXA</p>
+                      <p><i class="fa fa-phone fa-fw"></i>{{ profile.phone }}</p>
+                      <p><i class="fa fa-home fa-fw"></i>{{ profile.address }}</p>
+                        <p><i class="fa fa-birthday-cake fa-fw"></i>{{ profile.birth_date }}</p>
+                        <p><i class="fa fa-calendar-plus-o fa-fw"></i>{{ profile.joined_date }}</p>
+                      <div style="border: none;
+                      outline: 0;
+                      display: inline-block;
+                      padding: 8px;
+                      color: white;
+                      background-color: #000;
+                      text-align: center;
+                      width: 95%;
+                      font-size: 18px;">Naxa Pvt. Ltd.</div>
+                    </div>
+        </div>
+    <div class="col-sm-7" style="background-color:#e8e8ea;"><div style="float:left;">
+                <h3>Attendance Records</h3>
+                <table>
+                    <th>S.N.</th>
+                    <th>Name</th>
+                    <th>Time</th>
+                    {% for user in attendance %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{user.employee.first_name}} {{user.employee.last_name}}</td>
+                            {% if user.time %}
+                                <td>{{user.time}}</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div style="float:right;">
+                    <b>Pick a date to see attendance summary</b>
+                    <p><b>Date:</b> <input type="text" id="datepicker"></p>
+            </div></div>
+  </div>
+    </div>
+{% endblock %}
+{% block extrascript %}
+<script>
+
+$(function() {
+    $("#datepicker").datepicker();
+    $("#datepicker").on("change",function(){
+        var selected = $(this).val();
+        //alert(selected);
+        var id = '{{ profile.pk }}';
+        window.location.href = "http://127.0.0.1:8000/user-profile/"+id+"?q="+selected;
+    });
+});
+</script>
+{% endblock %}
