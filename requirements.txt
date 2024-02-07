@@ -4,7 +4,7 @@ backcall==0.1.0
 colorama==0.4.1
 cycler==0.10.0
 decorator==4.4.0
-Django==2.1.7
+Django==3.2.24
 django-crispy-forms==1.7.2
 django-debug-toolbar==1.11
 gast==0.2.2
