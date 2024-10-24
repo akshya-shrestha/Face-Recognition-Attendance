@@ -23,7 +23,7 @@ Keras-Preprocessing==1.0.9
 kiwisolver==1.0.1
 Markdown==3.0.1
 matplotlib==3.0.2
-mysql-connector-python==8.0.15
+mysql-connector-python==9.1.0
 mysqlclient==1.4.2.post1
 numpy==1.16.1
 opencv-contrib-python==4.0.0.21
